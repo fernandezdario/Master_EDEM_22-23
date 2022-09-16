@@ -1,1 +1,1 @@
-Primera colaboración en la rama del Mas Makina.
+Primera colaboración en la rama del.
