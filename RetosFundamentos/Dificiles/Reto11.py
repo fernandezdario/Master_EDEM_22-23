@@ -8,12 +8,20 @@ El programa debe mostrar las siguientes opciones para que escoja el usuario:
 (5) Mostrar ÚNICAMENTE los clientes preferentes
 (6) Finalizar Programa'''
 
-class Cliente:
 
-    def __init__(self, dni, nombre, apellido):
-        self.dni = dni
-        self.nombre = nombre
-        self.apellido = apellido
+class Clientes():
+    nif: str
+    name: str
+    surname: str
+    telephone: str
+    email: str
+    preference: bool
 
-    def __str__(self):
-        return f"({self.dni}) {self.nombre} {self.apellido}"
+    def __init__(self, nif, name, surname, telephone, email, preference):
+        self.nif = nif
+        self.name = name
+        self.surname = surname
+        self.telephone = telephone
+        self.email = email
+        self.preference = preference
+    
