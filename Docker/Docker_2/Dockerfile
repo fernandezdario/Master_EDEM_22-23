@@ -4,4 +4,4 @@ RUN apt-get update
 RUN apt-get install -y git
 
 
-ENTRYPOINT [ "git --version" ] 
+CMD git --version
