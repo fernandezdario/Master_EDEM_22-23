@@ -1,0 +1,6 @@
+version: '3.0'
+services:   
+  serv-nginx:
+    image: nginx
+    ports:
+      - '80:80'

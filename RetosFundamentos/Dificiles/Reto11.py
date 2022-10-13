@@ -9,7 +9,7 @@ El programa debe mostrar las siguientes opciones para que escoja el usuario:
 (6) Finalizar Programa'''
 
 
-class Clientes():
+class Cliente():
     nif: str
     name: str
     surname: str
@@ -24,4 +24,13 @@ class Clientes():
         self.telephone = telephone
         self.email = email
         self.preference = preference
+
+    clientes = []
     
+    def add(self, nif, name, surname, telephone, email, preference):
+        self.name = input('Escribe el nombre:')
+        self.nif = input('Escribe el DNI:')
+        self.surname = input('Escribe el appellido:')
+        self.telephone = input('Escribe el telefono:')
+        self.email = input('Escribe el email:')
+        self.preference = input('Escribe si eres preferente, si es así se pone True y viceversa:')
