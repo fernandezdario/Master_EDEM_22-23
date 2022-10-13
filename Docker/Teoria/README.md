@@ -1,3 +1,7 @@
+Hablemos un poco de Virtualización y sus entornos
+------
+------
+
 Virtualización
 ------
 Una maquina virtual se trata de la creación de maquinas de hacer de una sola a muchas maquinas con menores recursos, pero adaptados a los requisitos que se necesitan.
