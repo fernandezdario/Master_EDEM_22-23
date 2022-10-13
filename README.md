@@ -11,5 +11,5 @@ A lo largo del Máster hemos ido adquiriendo conocimientos en diversas materias,
 | **Python** | Contiene tanto la teoría, como los diferentes retos y prácticas realizadas a lo largo del curso, así como los ejercicios realizados en codewars.com para poner en práctica los conocimienntos adquiridos. |
 | **Docker** | En este apartado encontraremos las herramientas necesarias que hemos ido aprendiendo para la creación de imagenes y contenedores en Docker. |
 | **Fundamentos** | Contiene los fundamentos básicos de la programación y la ciencia de datos. |
-| **Git** | En este apartado podemos encontrar una serie de apuntes que nos permite conocer el funcionamiento básico de Git, así como entender como funciona un software de control de versiones |
+| **Git** | En este apartado podemos encontrar una serie de apuntes que nos permite conocer el funcionamiento básico de Git, así como entender como funciona un software de control de versiones. |
 | **Unix** | Contiene los conocimientos básicos de la programación en Linux. |
