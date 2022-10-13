@@ -65,3 +65,8 @@ La integración continua es una filosofía de codificación y un conjunto de pr�
 
 - La idea es establecer una manera consistente y automatizada de construir, empaquetar y probar las aplicaciones.
 - Los cambios del desarrollador se validan creando una compilación y ejecutando prueba automatizada contra la compilación.
+
+## Diferencias entre Contenedores y Máquinas Virtuales
+
+![avatar](Escritorio/Contenedores.png)
+
