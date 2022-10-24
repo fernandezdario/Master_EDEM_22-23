@@ -68,5 +68,5 @@ La integración continua es una filosofía de codificación y un conjunto de pr�
 
 ## Diferencias entre Contenedores y Máquinas Virtuales
 
-![avatar](Escritorio/Contenedores.png)
+[![Contenedores-VS-MV.png](https://i.postimg.cc/t4BsK8R5/Contenedores-VS-MV.png)](https://postimg.cc/FYJFcWLd)
 
