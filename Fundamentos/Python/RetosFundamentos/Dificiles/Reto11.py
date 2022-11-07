@@ -8,7 +8,7 @@ El programa debe mostrar las siguientes opciones para que escoja el usuario:
 (5) Mostrar ÚNICAMENTE los clientes preferentes
 (6) Finalizar Programa'''
 
-
+# para crear la terminal en la que elija el usuario podemos crear un bucle con while que nos permita elegir las diferentres opciones
 class Cliente():
     nif: str
     name: str
