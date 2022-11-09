@@ -8,29 +8,36 @@ El programa debe mostrar las siguientes opciones para que escoja el usuario:
 (5) Mostrar ÚNICAMENTE los clientes preferentes
 (6) Finalizar Programa'''
 
-# para crear la terminal en la que elija el usuario podemos crear un bucle con while que nos permita elegir las diferentres opciones
-class Cliente():
-    nif: str
-    name: str
-    surname: str
-    telephone: str
-    email: str
-    preference: bool
+import csv
+def cartera_cientes():
+    cliente = {}
 
-    def __init__(self, nif, name, surname, telephone, email, preference):
-        self.nif = nif
-        self.name = name
-        self.surname = surname
-        self.telephone = telephone
-        self.email = email
-        self.preference = preference
+    print('Bienvenido al sistema! A continuación, apareceran una serie de comandos que puedes accionar.')
+    eleccion = int(input('(1) Añadir un cliente \n(2) Eliminar cliente por NIF \n(3) Mostrar Cliente por NIF \n(4) Listar TODOS os clientes \n(5) Mostrar ÚNICAMENTE los clientes preferentes \n(6) Finalizar Programa \nAcción escogida: '))
 
-    clientes = []
-    
-    def add(self, nif, name, surname, telephone, email, preference):
-        self.name = input('Escribe el nombre:')
-        self.nif = input('Escribe el DNI:')
-        self.surname = input('Escribe el appellido:')
-        self.telephone = input('Escribe el telefono:')
-        self.email = input('Escribe el email:')
-        self.preference = input('Escribe si eres preferente, si es así se pone True y viceversa:')
+    if eleccion == 1:
+        nif = str(input('Escribe aquí tu NIF: '))
+        nombre = str(input('Escribe aquí tu nombre: '))
+        apellidos = str(input('Escribe aquí tus apellidos: '))
+        telefono = str(input('Escribe aquí tu teléfono: '))
+        email = str(input('Escribe aquí tu email: '))
+        preferente = bool(input('¿Tiene un contrato preferente? En caso de que así sea escriba True, en caso contrario False: '))
+        cliente = {'NIF': nif, 'Nombre': nombre, 'Apellidos': apellidos, 'Teléfono': telefono, 'Email': email, 'Preferente': preferente}
+        with open('clientes.csv', 'a') as g:  
+            a = csv.writer(g)
+            for k, v in cliente.items():
+                a.writerow([k, v])
+    elif eleccion == 2:
+        'sadfsdfsfd'
+    elif eleccion == 3:
+        'sadfsdfsfd'
+    elif eleccion == 4:
+        'sadfsdfsfd'
+    elif eleccion == 5:
+        'sadfsdfsfd'
+    elif eleccion == 6:
+        'sadfsdfsfd'
+    else:
+        print('Solamente existen comandos del 1 al 6, por favor elija un número comprendido en ese rango.')
+        eleccion = int(input('(1) Añadir un cliente \n(2) Eliminar cliente por NIF \n(3) Mostrar Cliente por NIF \n(4) Listar TODOS os clientes \n(5) Mostrar ÚNICAMENTE los clientes preferentes \n(6) Finalizar Programa \nAcción escogida: '))
+cartera_cientes()

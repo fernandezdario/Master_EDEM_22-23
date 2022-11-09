@@ -10,3 +10,4 @@ def reto13():
     def areaCircle(r: int):
         return (math.pi * r**2)
     print(f'El area del circulo es: {areaCircle(r = radius)}')
+reto13()
