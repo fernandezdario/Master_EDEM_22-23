@@ -16,10 +16,7 @@ class Cartera_clientes():
         self.email = email
         self.preferente = preferente        
 eleccion = 0
-cliente1 = Cartera_clientes('45464148J', 'Joaquin', 'Reyes Gomez', '694564123','joarego@gmail.com', preferente = False)
-cliente2 = Cartera_clientes('45464348D', 'Fernando', 'Sebastian Lopez', '642789453','nandose@gmail.com', preferente = True)
-cliente3 = Cartera_clientes('35428342D', 'Paco', 'Beltran Torres', '621248795','pabeto@gmail.com', preferente = True)
-clientes = [cliente1, cliente2, cliente3]
+clientes = []
 while eleccion != 6:
     print('Bienvenido al sistema! A continuación, apareceran una serie de comandos que puedes accionar.')
     eleccion = int(input('(1) Añadir un cliente \n(2) Eliminar cliente por NIF \n(3) Mostrar Cliente por NIF \n(4) Listar TODOS os clientes \n(5) Mostrar ÚNICAMENTE los clientes preferentes \n(6) Finalizar Programa \nAcción escogida: '))
@@ -48,7 +45,7 @@ while eleccion != 6:
         nif = str(input('Escribe el NIF del cliente que quieras encontrar: '))
         for n in clientes:
             if n.nif == NIF:
-                print(f'\n\nNIF: {n.NIF}\nNombre: {n.nombre}\nApellidos: {n.apellidos}\nTelefono: {n.telefono}\nEmail:{n.email}\nPreferente: {n.preferente}')
+                print(f'\n\nNIF: {NIF}\nNombre: {nombre}\nApellidos: {apellido}\nTelefono: {telefono}\nEmail:{email}\nPreferente: {preferente}')
         else:
             print('Este NIF no existe.')
     if eleccion == 4:
