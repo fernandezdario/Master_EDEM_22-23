@@ -7,44 +7,48 @@ El programa debe mostrar las siguientes opciones para que escoja el usuario:
 (4) Listar TODOS los clientes
 (5) Mostrar ÚNICAMENTE los clientes preferentes
 (6) Finalizar Programa'''
-import csv
-clientes = {}
-
-def cartera_cientes():
+class Cartera_clientes():
+    def __init__(self, NIF: str, nombre: str, apellido: str, telefono: str, email: str, preferente: bool):
+        self.NIF = NIF
+        self.nombre = nombre
+        self.apellido = apellido
+        self.telefono = telefono
+        self.email = email
+        self.preferente = preferente        
+eleccion = 0
+cliente1 = Cartera_clientes('45464148J', 'Joaquin', 'Reyes Gomez', '694564123','joarego@gmail.com', preferente = False)
+cliente2 = Cartera_clientes('45464348D', 'Fernando', 'Sebastian Lopez', '642789453','nandose@gmail.com', preferente = True)
+cliente3 = Cartera_clientes('35428342D', 'Paco', 'Beltran Torres', '621248795','pabeto@gmail.com', preferente = True)
+clientes = [cliente1, cliente2, cliente3]
+while eleccion != 6:
     print('Bienvenido al sistema! A continuación, apareceran una serie de comandos que puedes accionar.')
     eleccion = int(input('(1) Añadir un cliente \n(2) Eliminar cliente por NIF \n(3) Mostrar Cliente por NIF \n(4) Listar TODOS os clientes \n(5) Mostrar ÚNICAMENTE los clientes preferentes \n(6) Finalizar Programa \nAcción escogida: '))
 
     if eleccion == 1:
         # creamos los valores del diccionario, de forma interactiva, mediante consola
-        nif = str(input('Escribe aquí tu NIF: '))
+        NIF = str(input('Escribe aquí tu NIF: '))
         nombre = str(input('Escribe aquí tu nombre: '))
-        apellidos = str(input('Escribe aquí tus apellidos: '))
+        apellido = str(input('Escribe aquí tus apellidos: '))
         telefono = str(input('Escribe aquí tu teléfono: '))
         email = str(input('Escribe aquí tu email: '))
         preferente = bool(input('¿Tiene un contrato preferente? En caso de que así sea escriba True, en caso contrario False: '))
         #aquí le damos a los valores creados previamente unas claves para que se puedan alamacenar en el diccionario
-        cliente = {'NIF': nif, 'Nombre': nombre, 'Apellidos': apellidos, 'Telefono': telefono, 'Email': email, 'Preferente': preferente}
-        clientes[nif] = cliente
+        cliente = Cartera_clientes(NIF, nombre, apellido, telefono, email, preferente)
         #el programa guarda el diccionario en un csv y almacena los datos en formato clave, valor. En este caso la clave será el nif, mientras que el valor será el resto del diccionario.
-        with open('C:\\Users\\dario\\OneDrive\\Documentos\\GitHub\\M-ster-EDEM-22-23\\Fundamentos\\Python\\RetosFundamentos\\Dificiles\\clientes.csv', 'a') as g:  
-            a = csv.writer(g)
-            for k, v in clientes.items():
-                a.writerow([k, v])
+        clientes.append(cliente)
     if eleccion == 2:
         print('Has seleccionado la opción de eliminar un cliente por NIF.')
         nif = str(input('Escribe el NIF del cliente que quieras eliminar: '))
-        if nif in clientes:
-            del cliente
-            with open('C:\\Users\\dario\\OneDrive\\Documentos\\GitHub\\M-ster-EDEM-22-23\\Fundamentos\\Python\\RetosFundamentos\\Dificiles\\clientes.csv', 'w') as g:  
-                writer = csv.writer(g)
-                for k, v in clientes.items():
-                    writer.writerow([k, v])
+        for n in clientes:
+            if n.nif == NIF:
+                clientes.remove(n)
         else:
             print('No existe este NIF.')
     if eleccion == 3:
         nif = str(input('Escribe el NIF del cliente que quieras encontrar: '))
-        if nif in clientes:
-            print(cliente)
+        for n in clientes:
+            if n.nif == NIF:
+                print(f'\n\nNIF: {n.NIF}\nNombre: {n.nombre}\nApellidos: {n.apellidos}\nTelefono: {n.telefono}\nEmail:{n.email}\nPreferente: {n.preferente}')
         else:
             print('Este NIF no existe.')
     if eleccion == 4:
@@ -53,7 +57,7 @@ def cartera_cientes():
         'sadfsdfsfd'
     if eleccion == 6:
         'sadfsdfsfd'
+        break
     else:
         print('Solamente existen comandos del 1 al 6, por favor elija un número comprendido en ese rango.')
         eleccion = int(input('(1) Añadir un cliente \n(2) Eliminar cliente por NIF \n(3) Mostrar Cliente por NIF \n(4) Listar TODOS os clientes \n(5) Mostrar ÚNICAMENTE los clientes preferentes \n(6) Finalizar Programa \nAcción escogida: '))
-cartera_cientes()
