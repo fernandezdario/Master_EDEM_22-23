@@ -2,7 +2,7 @@
 import math
 def reto13():
     base = int(input('Escribe la base del triángulo: '))
-    height = int(input('Escribe la base del triángulo: '))
+    height = int(input('Escribe la altura del triángulo: '))
     radius = int(input('Escribe el radio del circulo: '))
     def areaTriangle(a: int, b: int):
         return (a * b * 0.5)

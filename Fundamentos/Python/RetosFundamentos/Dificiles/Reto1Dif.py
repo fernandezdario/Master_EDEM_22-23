@@ -63,7 +63,8 @@ Dawn_FM = {
 'Genero': 'Electro'
 }
 
-lista = [Un_Verano_Sin_Ti, Filosofem, Random_Access_Memories, Nevermind, Back_To_Black, Masters_Of_Puppets, Human, Appetite_For_Destruction, Dawn_FM]
+
+
 input('Bienvenido a la caja registradora, pulsa enter para empezar :)')
 print('Estos son los siguientes albumes disponibles para compra: \n1º: Un verano sin ti \n2º: Filosofem \n3º: Random Access Memories \n4º: Nevermind \n5º: Back to Black \n6º: Masters of Puppets \n7º: Human \n8º: Appetite for Destruction \n9º: Dawn FM')
 eleccion = int(input('Escoge un numero del 1 al 9 para seleccionar el album que desees: '))
@@ -110,6 +111,7 @@ elif eleccion == 9:
 
 numero = int(input(f'Finalmente has escogido el album {nombre}, pulse la tecla 0 para terminar con la compra.'))
 if numero == 0:
+  print(f'Total a pagar: {round(disco[("Precio")],2)}€')
   print('Muchas gracias por su compra! :)')
   if disco == Filosofem:
     print(f'En esta compra se ha ahorrado: ' + str(0.3*16) + '€')

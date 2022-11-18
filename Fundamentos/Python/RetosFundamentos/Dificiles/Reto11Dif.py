@@ -7,15 +7,18 @@ El programa debe mostrar las siguientes opciones para que escoja el usuario:
 (4) Listar TODOS los clientes
 (5) Mostrar ÚNICAMENTE los clientes preferentes
 (6) Finalizar Programa'''
-
-from Clientes import Clientes
-cliente1 = Clientes('85082725C', 'Nieves', 'Fernandez Castillo', '699487511','nfer@gmail.com', preferente = False)
-cliente2 = Clientes('24334318L', 'Heraclio', 'Fernandez Mejias', '629687591','vief@gmail.com', preferente = True)
-cartera_clientes = [cliente1, cliente2]
+class Clientes():
+    def __init__(self, NIF:str, nombre:str, apellido:str, telefono:str, email:str, preferente:bool):
+        self.NIF = NIF
+        self.nombre = nombre
+        self.apellido = apellido
+        self.telefono = telefono
+        self.email = email
+        self.preferente = preferente
+cartera_clientes = []
 eleccion = 0
-print('Bienvenido a la pantalla de seleccion de la carte de clientes!')
+print('Bienvenido a la pantalla de seleccion de la carte de clientes! A continuación, apareceran una serie de comandos que puedes accionar.')
 while eleccion != 6:
-    print('Bienvenido al sistema! A continuación, apareceran una serie de comandos que puedes accionar.')
     eleccion = int(input('(1) Añadir un cliente \n(2) Eliminar cliente por NIF \n(3) Mostrar Cliente por NIF \n(4) Listar TODOS os clientes \n(5) Mostrar ÚNICAMENTE los clientes preferentes \n(6) Finalizar Programa \nAcción escogida: '))
     if eleccion == 1:
         # creamos los valores del diccionario, de forma interactiva, mediante consola
@@ -61,5 +64,3 @@ while eleccion != 6:
     else:
         print('Este programa solo contempla acciones del 1 al 6, por favor vuelva a introducir una acción que se contemple en los parámetros del programa.')
         eleccion = int(input('(1) Añadir un cliente \n(2) Eliminar cliente por NIF \n(3) Mostrar Cliente por NIF \n(4) Listar TODOS os clientes \n(5) Mostrar ÚNICAMENTE los clientes preferentes \n(6) Finalizar Programa \nAcción escogida: '))
-
-

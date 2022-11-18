@@ -19,3 +19,4 @@ def reto17():
   print(tupla [2:9:2])
   print(tupla [0:9:4])
   print(tupla [9:2:-1])
+reto17()
