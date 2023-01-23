@@ -23,7 +23,7 @@ Además, podemos encontrar que con las bases de datos no relacionales podemos al
 - En memoria
 - Indexados
 
-## Archivos
+## Almacenamiento de Archivos
 
 Descripción:
 
@@ -39,7 +39,12 @@ Descripción:
    - Orientado a columnas
 
 *Tecnologías:*
-![Formatos de almacenamiento](file_storage.png)
+
+![Formatos de almacenamiento](2_Tratamiento_dato/../Imagenes/tec1.png)
+
+*Formatos de alamcenamiento de archivos:*
+
+![Formatos de almacenamiento](2_Tratamiento_dato/../Imagenes/file_storage.png)
 
 ## Clave - Valor
 
@@ -49,6 +54,7 @@ Descripción:
 
 *Tecnologías:*
 
+![Formatos de almacenamiento](2_Tratamiento_dato/../Imagenes/tec2.png)
 
 **Apectos clave:**
 
@@ -73,6 +79,8 @@ Descripción:
 
 *Tecnologías:*
 
+![Formatos de almacenamiento](2_Tratamiento_dato/../Imagenes/tec3.png)
+
 ## Gráficos
 
 Descripción: 
@@ -88,6 +96,8 @@ Descripción:
 - No es escalable 
 
 *Tecnologías:*
+
+![Formatos de almacenamiento](2_Tratamiento_dato/../Imagenes/tec4.png)
 
 ## Base de Datos en memoria
 
@@ -107,6 +117,8 @@ Descripción:
 
 *Tecnologías:*
 
+![Formatos de almacenamiento](2_Tratamiento_dato/../Imagenes/tec5.png)
+
 ## Datos Indexados
 
 Descripción:
@@ -124,7 +136,87 @@ Descripción:
 
 *Tecnologías:*
 
+![Formatos de almacenamiento](2_Tratamiento_dato/../Imagenes/tec6.png)
+
 ## Teorema CAP
 
-![CAP Theorem](cap_teorema.png)
+![CAP Theorem](2_Tratamiento_dato/../Imagenes/cap_teorema.png)
+
+El Teorema CAP nos sugiere que todo sistema distribuido de almacenamiento de datos es vulnerable a fallos de conectividad de la red, por lo que, frente al nivel de tolerancia de la partición de los nodos, tendrá que realizar algún tipo de concesión entre el acceso a la información o a su versión más reciente.
+
+Este teorema fue presentado por Eric Brewer en el año 2000 y su nombre está basado en los siguientes tres atributos claves de los sistemas distribuidos:
+
+- **C - Consistencia (Consistency):** Se refiere a la lectura coherente del valor actual del dato desde cualquier instancia, es decir que los datos se encuentran sincronizados y replicados en todos los nodos a la vez.
+
+- **A - Disponibilidad (Availability):** Se refiere a obtener una respuesta válida y rápida para todas las solicitudes, aunque existan nodos inactivos, es decir el acceso a los datos sin interrupciones.
+
+- **P - Tolerancia a particiones (Partition tolerance):** Se refiere a la capacidad del sistema para permanecer estable y continuar procesando solicitudes a pesar de ocurrir una partición (interrupción) entre la comunicación de los nodos.
+
+# Cassandra
+
+*Definición:*
+
+> Apache Cassandra es un sistema de gestión de bases de datos NOSQL distribuido, de código abierto y gratuito, con un amplio almacén de columnas, diseñado para manejar grandes cantidades de datos en muchos servidores básicos, proporcionando alta disponibilidad sin un único punto de fallo.
+>
+> Cassandra ofrece un sólido soporte para clústeres que abarcan múltiples centros de datos, con replicación asíncrona sin maestro que permite operaciones de baja latencia para todos los clientes.
+
+
+### Características
+
+![Formatos de almacenamiento](2_Tratamiento_dato/../Imagenes/caract_cass.png)
+
+### Cuándo usar Cassandra
+
+La aplicación Cassandra ideal tiene las siguientes características:
+- Las escrituras superan a las lecturas por un amplio margen.
+- Los datos se actualizan raramente y cuando se realizan actualizaciones son idempotentes.
+- El acceso de lectura se realiza mediante una clave primaria conocida.
+- Los datos se pueden particionar mediante una clave que permite repartir la base de datos uniformemente.
+a través de múltiples nodos.
+- No son necesarias las uniones ni los agregados.
+
+### Casos de uso
+
+Algunos casos de uso para Cassandra serían:
+- Registro de transacciones: Compras, puntuaciones de exámenes, películas vistas y última ubicación del usuario.
+- Almacenamiento de datos de series temporales (siempre que hagas tus propios agregados)
+- Seguimiento de prácticamente cualquier cosa, incluido el estado del pedido, paquetes, etc.
+- Almacenamiento de datos de seguimiento de la salud.
+- Historial del servicio meteorológico.
+- Estado del Internet de las cosas (IoT) e historial de eventos.
+
+### Conceptos básicos
+
+![Formatos de almacenamiento](2_Tratamiento_dato/../Imagenes/concep.png)
+
+### Primary Keys
+
+Los conceptos de clave en Cassandra son diferentes a las bases de datos Relacionales.
+- Clave primaria: Es lo que se llama una clave de partición. A parte de la unicidad del registro en la base de datos, determina la localidad de los datos o en qué nodo deben almacenarse.
+- Clave primaria compuesta: Una clave primaria compuesta está formada por una o más columnas a las que se hace referencia en la clave primaria. Se forma así:
+  - *((Partition_Key_1,...Partition_Key_N), (Cluster_Key_1,...Cluster_Key_N))*
+  - Clave de partición: El propósito de una clave de partición es identificar la partición o nodo del cluster que almacena esa fila.
+  - Clave de clusterización: El propósito de la clave de agrupación es almacenar los datos de la fila en un ordenados.
+
+![Formatos de almacenamiento](2_Tratamiento_dato/../Imagenes/clust.png)
+
+### Querys Lenguaje de Cassandra (CQL)
+
+- CQL (Cassandra Query Language) ofrece un modelo cercano a SQL en el sentido de que los datos se ponen en tablas que contienen filas de columnas. Por esa razón, cuando se utilizan en esta formación, estos términos (tablas, filas y columnas) tienen la misma definición que en SQL.
+- No se refieren al concepto de filas y columnas que se encuentra en la obsoleta API thrift (y versiones anteriores 1 y 2 de CQL).
+
+![Formatos de almacenamiento](2_Tratamiento_dato/../Imagenes/cql.png)
+
+### Commands
+
+Dentro del lenguaje de Cassandra podemos encontrar una serie de datos que podrían llegar a resultar interesantes conocer, a continuación a parecerán una serie de imágenes donde podemos observar diferentes querys y comando para ejecutar acciones en Cassandra:
+
+**Data Definition:**
+
+![Formatos de almacenamiento](2_Tratamiento_dato/../Imagenes/command.png)
+
+**Data Manipulation:**
+
+![Formatos de almacenamiento](2_Tratamiento_dato/../Imagenes/mani.png)
+
 
