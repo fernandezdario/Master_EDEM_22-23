@@ -15,3 +15,5 @@ En el caso de la regresión podremos ver como el target es numérico, es decir e
 - Precisión: Es la capacidad de un modelo para PREDECIR CORRECTAMENTE las clases positivas. Es decir, es la capacidad de un modelo para predecir correctamente a las personas que tienen cáncer. Por ejemplo, si tenemos un modelo que detecta si una persona tiene cáncer o no, la precisión es la capacidad de este modelo para predecir correctamente a las personas que tienen cáncer.
 - F1 Score: Es la media armónica entre la sensibilidad y la precisión. Es decir, es la media armónica entre la capacidad de un modelo para detectar las clases positivas y la capacidad de un modelo para predecir correctamente las clases positivas. Por ejemplo, si tenemos un modelo que detecta si una persona tiene cáncer o no, el F1 Score es la media armónica entre la capacidad de este modelo para detectar a las personas que tienen cáncer y la capacidad de este modelo para predecir correctamente a las personas que tienen cáncer.
 
+### Modelos no lineales
+
