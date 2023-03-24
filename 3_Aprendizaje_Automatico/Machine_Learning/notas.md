@@ -1,3 +1,5 @@
+# Modelos Lineales
+
 ## Clasificación vs Regresión
 
 En el caso de la regresión podremos ver como el target es numérico, es decir el target será una variable numérica, mientras que en el caso de la clasificación podremos ver como el target cambia hacia las varaibles categóricas, hay que tener cuidado con este tipo de estrategia a seguir con cada uno de los dos tipos.
@@ -15,5 +17,9 @@ En el caso de la regresión podremos ver como el target es numérico, es decir e
 - Precisión: Es la capacidad de un modelo para PREDECIR CORRECTAMENTE las clases positivas. Es decir, es la capacidad de un modelo para predecir correctamente a las personas que tienen cáncer. Por ejemplo, si tenemos un modelo que detecta si una persona tiene cáncer o no, la precisión es la capacidad de este modelo para predecir correctamente a las personas que tienen cáncer.
 - F1 Score: Es la media armónica entre la sensibilidad y la precisión. Es decir, es la media armónica entre la capacidad de un modelo para detectar las clases positivas y la capacidad de un modelo para predecir correctamente las clases positivas. Por ejemplo, si tenemos un modelo que detecta si una persona tiene cáncer o no, el F1 Score es la media armónica entre la capacidad de este modelo para detectar a las personas que tienen cáncer y la capacidad de este modelo para predecir correctamente a las personas que tienen cáncer.
 
-### Modelos no lineales
+# Modelos no lineales
+
+- SVM: Es un modelo que se basa en la distancia entre los puntos, es decir, se basa en la distancia entre los puntos para poder realizar la clasificación. Este modelo es muy bueno para realizar clasificaciones no lineales.
+
+Los modelos que vamos a ver ahora sirven tanto para clasificación como para regresión.
 
