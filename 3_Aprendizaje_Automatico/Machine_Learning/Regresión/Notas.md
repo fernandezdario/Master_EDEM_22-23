@@ -13,6 +13,7 @@ La regresión es una técnica de aprendizaje superevisado para predecir a partir
 - Relacíon entre variables al modelo
 - Importancia de las características del modelo
 
+### Funciones concavas y convexas
 
 
 
