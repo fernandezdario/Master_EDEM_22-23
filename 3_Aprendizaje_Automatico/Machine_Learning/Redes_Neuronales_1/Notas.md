@@ -20,3 +20,9 @@ El proceso para crear un modelo BoW se puede resumir en los siguientes pasos:
 3. Construcción del vocabulario: Se crea un vocabulario de todas las palabras únicas encontradas en el corpus.
 4. Codificación del texto: Se cuenta la frecuencia de cada palabra en cada documento y se crea una matriz donde cada fila representa un documento y cada columna representa una palabra en el vocabulario.
 
+En función de los datos que tengamos utilizaremos unas redes u otras:
+
+- Totalmente conectadas: Datos tabulares
+- Recurrentes: Series Temporales
+- Redes Convolucionales: Imágenes
+- Transformers: Texto
